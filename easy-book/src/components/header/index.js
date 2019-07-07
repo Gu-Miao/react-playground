@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { bindActionCreators } from 'redux';
 
 import {
     HeaderWrapper, Logo, Nav, NavItem, SearchWrapper,
@@ -25,8 +26,8 @@ class Header extends React.Component {
                     <SearchWrapper>
                         <Search
                             className={this.props.focused ? 'focused' : ''}
-                            onFocus={this.props.handleSearchFocus}
-                            onBlur={this.props.handleSearchBlur}
+                            onFocus={this.props.searchFocusAction}
+                            onBlur={this.props.searchBlurAction}
                         />
                         <i
                             className={this.props.focused ? 'focused iconfont icon-search' : 'iconfont icon-search'}
@@ -51,7 +52,6 @@ class Header extends React.Component {
                     <Button className="reg">注册</Button>
                 </Addtion>
             </HeaderWrapper>
-
         );
     }
 
@@ -64,14 +64,14 @@ class Header extends React.Component {
         if (this.props.focused || this.props.mouseIn) {
             return (
                 <PanelWrapper
-                    onMouseEnter={this.props.handlePanelMouseenter}
-                    onMouseLeave={this.props.handlePanelMouseout}
+                    onMouseEnter={this.props.panelMouseenterAction}
+                    onMouseLeave={this.props.panelMouseoutAction}
                 >
                     <Panel>
                         <div className="panel-header">
                             <span className="hot">热门搜索</span>
                             <Change
-                                onClick={() => this.props.handleChangePage(this.props.page, this.props.totalPage, this.hotRefresher)}
+                                onClick={() => { this.handleChangePage(this.props.page, this.props.totalPage, this.hotRefresher) }}
                             >
                                 <i ref={(icon) => { this.hotRefresher = icon }} className="iconfont icon-refresh"></i>
                                 换一换
@@ -103,30 +103,8 @@ class Header extends React.Component {
         });
         return hotList;
     };
-}
 
-const mapStateToProps = state => {
-
-    console.log(state.header.get('totalPage'));
-
-    return {
-        focused: state.header.get('focused'),
-        list: state.header.get('list'),
-        totalPage: state.header.get('totalPage'),
-        page: state.header.get('page'),
-        mouseIn: state.header.get('mouseIn'),
-        isLogin: state.login.get('isLogin')
-    }
-};
-
-const mapDispatchToProps = dispatch => ({
-    handleSearchFocus: () => {
-        dispatch(searchFocusAction())
-    },
-    handleSearchBlur: () => {
-        dispatch(searchBlurAction())
-    },
-    handleChangePage: (page, totalPage, spin) => {
+    handleChangePage = (page, totalPage, spin) => {
         let originAngle = spin.style.transform.replace(/[^0-9]/ig, '');
         if (originAngle) {
             originAngle = parseInt(originAngle, 10);
@@ -136,17 +114,28 @@ const mapDispatchToProps = dispatch => ({
         spin.style.transform = 'rotate(' + (originAngle + 360) + 'deg)';
 
         if (page < totalPage) {
-            dispatch(refreshHotListAction(page + 1));
+            this.props.refreshHotListAction(page + 1);
         } else {
-            dispatch(refreshHotListAction(1));
+            this.props.refreshHotListAction(1);
         }
-    },
-    handlePanelMouseenter: () => {
-        dispatch(panelMouseenterAction());
-    },
-    handlePanelMouseout: () => {
-        dispatch(panelMouseoutAction());
     }
-})
+}
+
+const mapStateToProps = state => ({
+    focused: state.header.get('focused'),
+    list: state.header.get('list'),
+    totalPage: state.header.get('totalPage'),
+    page: state.header.get('page'),
+    mouseIn: state.header.get('mouseIn'),
+    isLogin: state.login.get('isLogin')
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+    searchFocusAction, 
+    searchBlurAction, 
+    refreshHotListAction,
+    panelMouseenterAction,
+    panelMouseoutAction
+}, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);
