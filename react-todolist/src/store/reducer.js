@@ -5,6 +5,8 @@ const defaultState = fromJS({
     list: []
 });
 
+const deepCopy = (el) => JSON.parse(JSON.stringify(el));
+
 export default (state = defaultState, action) => {
 
     if (action.type === 'change_input_value') {
@@ -21,7 +23,7 @@ export default (state = defaultState, action) => {
     }
 
     if (action.type === 'delete_todo_item') {
-        const list = state.get('list');
+        const list = deepCopy(state.get('list'));
         list.splice(action.index, 1);
 
         return state.set('list', list);
