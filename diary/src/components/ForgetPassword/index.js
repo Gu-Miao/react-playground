@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { observable } from "mobx"
 
-class Home extends Component {
+class ForgetPassword extends Component {
 
     id = Math.random()
     @observable title = ""
@@ -11,11 +11,11 @@ class Home extends Component {
     render() {
         return (
             <div>
-                <h1>Home</h1>
+                <h1>ForgetPassword</h1>
                 <Link to="/login">login</Link>
             </div>
         )
     }
 }
 
-export default Home
+export default ForgetPassword

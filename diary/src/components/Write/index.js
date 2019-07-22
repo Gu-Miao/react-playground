@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 class Write extends Component {
     render() {
@@ -8,4 +8,4 @@ class Write extends Component {
     }
 }
 
-export default Write;
+export default Write
