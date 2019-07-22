@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Counter from './components/Counter'
+import Time from './components/Time'
 
 ReactDOM.render(
-    <Counter />,
+    <Time />,
     document.getElementById('root')
 );

@@ -35,17 +35,17 @@ export const getFormatTimeStr = (timeNum, isHour) => {
 }
 
 export const getTime = (hour, min, sec) => {
-    if (sec === 60) {
-        return { hour, min: ++min, sec: 0 }
+   
+    if (sec === 60 && min === 59 && hour === 23) {
+        return { hour: 0, min: 0, sec: 0 }
     }
-    
-    if (sec === 60 && min === 59) {
 
+    if (sec === 60 && min === 59) {
         return { hour: ++hour, min: 0, sec: 0 }
     }
 
-    if (sec === 60 && min === 59 && hour === 23) {
-        return { hour: 0, min: 0, sec: 0 }
+    if (sec === 60) {
+        return { hour, min: ++min, sec: 0 }
     }
 
     return { hour, min, sec }
