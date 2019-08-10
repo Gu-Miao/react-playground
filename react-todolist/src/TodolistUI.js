@@ -15,7 +15,9 @@ const TodolistUI = (props) => {
                 <Button
                     type="primary"
                     onClick={props.addTodo}
-                >Submit</Button>
+                >
+                    Submit
+                </Button>
             </div>
             <List
                 style={{ margin: '10px' }}
