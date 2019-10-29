@@ -4,12 +4,14 @@
     "private": true,
     "dependencies": {
         "antd-mobile": "^2.3.1",
+        "axios": "^0.19.0",
         "history": "^4.10.1",
         "immutable": "^4.0.0-rc.12",
         "react": "^16.9.0",
         "react-dom": "^16.9.0",
         "react-router-dom": "^5.0.1",
-        "react-scripts": "3.1.1"
+        "react-scripts": "3.1.1",
+        "websocket": "^1.0.30"
     },
     "scripts": {
         "start": "react-scripts start",
@@ -31,5 +33,6 @@
             "last 1 firefox version",
             "last 1 safari version"
         ]
-    }
+    },
+    "proxy": "http://192.168.54.58:7000"
 }

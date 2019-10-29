@@ -1,16 +1,21 @@
+import { Fragment } from 'react'
 import Head from 'next/head'
 
+import App from './App'
 
-const App = () => {
+
+const Main = () => {
     return (
-        <div>
+        <Fragment>
             <Head>
-                <title>My page title</title>
-                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
+                <meta http-equiv="X-UA-Compatible" content="ie=edge" key="ie" />
+                <title>简书</title>
+                <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon" key="favicon" />
             </Head>
-            <p>Hello world!</p>
-        </div>
+            <App />
+        </Fragment>
     )
 }
 
-export default App
+export default Main
