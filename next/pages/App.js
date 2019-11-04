@@ -1,3 +1,5 @@
+import '../app.less'
+
 const App = () => {
     return (
         <div>
