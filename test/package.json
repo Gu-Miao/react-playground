@@ -3,7 +3,6 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
-        "@babel/plugin-proposal-decorators": "^7.8.0",
         "concent": "^1.5.95",
         "mobx-react": "^6.1.4",
         "react": "^16.9.0",
@@ -16,6 +15,9 @@
         "socket.io": "^2.3.0",
         "swr": "^0.1.16",
         "websocket": "^1.0.30"
+    },
+    "devDependencies": {
+        "@babel/plugin-proposal-decorators": "^7.8.0"
     },
     "scripts": {
         "start": "react-scripts start",
@@ -37,19 +39,6 @@
             "last 1 chrome version",
             "last 1 firefox version",
             "last 1 safari version"
-        ]
-    },
-    "babel": {
-        "plugins": [
-            [
-                "@babel/plugin-proposal-decorators",
-                {
-                    "legacy": true
-                }
-            ]
-        ],
-        "presets": [
-            "react-app"
         ]
     }
 }
