@@ -1,14 +1,13 @@
 import React from 'react'
-import { createBrowserHistory } from 'history'
 
-import './style.css'
-
-const history = createBrowserHistory()
+import Home from './pages/Home'
 
 const App = () => {
 
     return (
-        <div>heloo App!</div>
+        <div>
+            <Home />
+        </div>
     )
 }
 

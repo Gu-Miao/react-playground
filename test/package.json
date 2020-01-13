@@ -3,15 +3,18 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
-        "antd-mobile": "^2.3.1",
-        "axios": "^0.19.0",
-        "history": "^4.10.1",
-        "immutable": "^4.0.0-rc.12",
+        "@babel/plugin-proposal-decorators": "^7.8.0",
+        "concent": "^1.5.95",
+        "mobx-react": "^6.1.4",
         "react": "^16.9.0",
+        "react-consumer": "^1.6.2",
         "react-dom": "^16.9.0",
+        "react-hooks-redux": "^0.10.4",
         "react-router-dom": "^5.0.1",
         "react-scripts": "3.1.1",
+        "redux-react-hook": "^4.0.1",
         "socket.io": "^2.3.0",
+        "swr": "^0.1.16",
         "websocket": "^1.0.30"
     },
     "scripts": {
@@ -36,5 +39,17 @@
             "last 1 safari version"
         ]
     },
-    "proxy": "http://192.168.54.58:7000"
+    "babel": {
+        "plugins": [
+            [
+                "@babel/plugin-proposal-decorators",
+                {
+                    "legacy": true
+                }
+            ]
+        ],
+        "presets": [
+            "react-app"
+        ]
+    }
 }
