@@ -1,7 +1,6 @@
 import React, { useEffect, useMemo } from 'react'
 import { createPortal } from 'react-dom'
 import classnames from 'classnames'
-import './modal.scss'
 
 const Modal = props => {
   const { title, body, footer, show, onClose } = props

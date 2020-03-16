@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { createPortal } from 'react-dom'
 import classnames from 'classnames'
-import './modal.less'
 
 export default class ModalClass extends Component {
   constructor(props) {
