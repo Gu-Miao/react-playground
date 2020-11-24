@@ -1,0 +1,1 @@
+{"version":3,"sources":["pages/Home/index.js"],"names":["Home"],"mappings":"2HAAA,mEAEe,SAASA,IACtB,OACE,6BACE,gDACA","file":"static/js/4.b4798631.chunk.js","sourcesContent":["import React from 'react'\n\nexport default function Home() {\n  return (\n    <div>\n      <h1>React playground</h1>\n      <h2>react demo collections</h2>\n    </div>\n  )\n}\n"],"sourceRoot":""}
