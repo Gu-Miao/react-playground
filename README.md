@@ -6,4 +6,4 @@ React demo collections.
 
 - [Dialog](./src/pages/dialog/index.js) - A sample Modal component based on `createPortal` API.
 
-- [Render With Logger](./src/pages/dialog/index.js) - A Logger component based on HOC and hooks.
+- [Render With Logger](./src/pages/renderWithLogger/index.js) - A Logger component based on HOC and hooks.
