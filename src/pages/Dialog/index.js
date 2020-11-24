@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
-import Layout from '@/components/Layout'
 import { ModalClass } from '@/components/Modal'
 
 export default function Dialog() {
   const [showClassModdal, setShowClassModdal] = useState(false)
   const [showFuncModal, setShowFuncModal] = useState(false)
   return (
-    <Layout>
+    <div>
       <h1>Dialog</h1>
       <button
         onClick={() => {
@@ -40,6 +39,6 @@ export default function Dialog() {
         body={<div>函数组件存在问题</div>}
         footer={<button>ok</button>}
       />
-    </Layout>
+    </div>
   )
 }

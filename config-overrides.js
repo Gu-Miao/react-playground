@@ -24,6 +24,7 @@ module.exports = override(
     '@': reslovePath('src'),
     '@components': reslovePath('src/components'),
     '@hooks': reslovePath('src/hooks'),
+    '@layout': reslovePath('src/layout'),
     '@pages': reslovePath('src/pages'),
     '@utils': reslovePath('src/utils')
   })

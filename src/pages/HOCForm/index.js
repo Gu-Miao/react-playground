@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Layout from '@/components/Layout'
 import Form from '@/components/Form'
 
 const { Item: FormItem, create } = Form
@@ -22,7 +21,7 @@ class HOCForm extends Component {
     console.log('props', this.props)
     const { getFieldDecorator } = this.props.form
     return (
-      <Layout>
+      <div>
         <h1>HOCForm Login</h1>
         <Form onSubmit={this.login}>
           <FormItem label="username">
@@ -52,7 +51,7 @@ class HOCForm extends Component {
           </FormItem>
           <button type="submit">login</button>
         </Form>
-      </Layout>
+      </div>
     )
   }
 }
