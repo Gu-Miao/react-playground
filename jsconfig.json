@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@@/*": ["./*"],
+      "@/*": ["src/*"],
+      "@components/*": ["src/components/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@pages/*": ["src/pages/*"],
+      "@utils/*": ["src/utils/*"],
+      "@utils": ["src/utils/index.js"]
+    },
+    "experimentalDecorators": true
+  },
+  "exclude": ["node_modules", "build"]
+}

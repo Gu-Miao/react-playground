@@ -21,6 +21,10 @@ module.exports = override(
   addDecoratorsLegacy(),
   addWebpackAlias({
     '@@': reslovePath('.'),
-    '@': reslovePath('src')
+    '@': reslovePath('src'),
+    '@components': reslovePath('src/components'),
+    '@hooks': reslovePath('src/hooks'),
+    '@pages': reslovePath('src/pages'),
+    '@utils': reslovePath('src/utils')
   })
 )
