@@ -1,20 +1,26 @@
-import React from 'react'
+import React, { Suspense, lazy } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import Error from '@/pages/Error'
-import Home from '@/pages/Home'
-import HOCForm from '@/pages/HOCForm'
-import Dialog from '@/pages/Dialog'
+import router from './router'
 
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route exact component={Home} path="/" />
-        <Route exact component={HOCForm} path="/hoc-form" />
-        <Route exact component={Dialog} path="/dialog" />
-        <Route component={Error} />
-      </Switch>
-    </Router>
+    <Suspense fallback="">
+      <Router basename={process.env.PUBLIC_URL}>
+        <Switch>
+          {router.map(({ component, title, ...restProps }, index) => (
+            <Route
+              key={index}
+              {...restProps}
+              render={props => {
+                if (title) document.title = title
+                const Component = lazy(() => import(`@pages/${component}`))
+                return <Component {...props} />
+              }}
+            />
+          ))}
+        </Switch>
+      </Router>
+    </Suspense>
   )
 }
 
