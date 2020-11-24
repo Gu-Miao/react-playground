@@ -15,7 +15,13 @@ const router = [
     path: '/dialog',
     component: 'dialog',
     exact: true,
-    title: 'dialog'
+    title: 'Dialog'
+  },
+  {
+    path: '/render-with-logger',
+    component: 'renderWithLogger',
+    exact: true,
+    title: 'Render With Logger'
   },
   {
     component: 'error',
