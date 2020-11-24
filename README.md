@@ -2,8 +2,8 @@
 
 React demo collections.
 
-- [HOC Form](./src/components/Form/create.js) - realization of imitating ant design@3 form component
+- [HOC Form](./src/pages/HOCForm/index.js) - realization of imitating ant design@3 form component
 
-- [layout](./src/components/layout/index.js) - basic usage of layout with `props.children`
+- [Dialog](./src/pages/dialog/index.js) - A sample Modal component based on `createPortal` API.
 
-- [Modal](./src/components/Modal/index.js) - A sample Modal component based on `createPortal` API.
+- [Render With Logger](./src/pages/dialog/index.js) - A Logger component based on HOC and hooks.
