@@ -24,6 +24,12 @@ const router = [
     title: 'Render With Logger'
   },
   {
+    path: '/custom-react',
+    component: 'customReact',
+    exact: true,
+    title: 'custom react'
+  },
+  {
     component: 'error',
     title: 'error'
   }
