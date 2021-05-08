@@ -1,0 +1,2 @@
+(this["webpackJsonpreact-playground"]=this["webpackJsonpreact-playground"]||[]).push([[5],{10:function(e,n,t){"use strict";t.r(n),t.d(n,"default",(function(){return c}));var a=t(0),r=t.n(a);function c(){return r.a.createElement("div",null,r.a.createElement("h1",null,"React playground"),r.a.createElement("h2",null,"react demo collections"))}}}]);
+//# sourceMappingURL=5.6205426c.chunk.js.map

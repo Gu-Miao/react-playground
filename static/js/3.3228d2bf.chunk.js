@@ -1,2 +1,0 @@
-(this["webpackJsonpreact-playground"]=this["webpackJsonpreact-playground"]||[]).push([[3],{9:function(e,t,n){"use strict";n.r(t),n.d(t,"default",(function(){return u}));var a=n(0),r=n.n(a),c=n(8);function u(){return r.a.createElement("div",null,r.a.createElement("h1",null,"404"),r.a.createElement(c.b,{to:"/"},"back to home"))}}}]);
-//# sourceMappingURL=3.3228d2bf.chunk.js.map
